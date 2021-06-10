@@ -13,5 +13,4 @@ const init = function(){
     getLanden();    
 };
 
-
 document.addEventListener('DOMContentLoaded', init);

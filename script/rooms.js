@@ -17,5 +17,4 @@ const init = function(){
     getZalen();
 };
 
-
 document.addEventListener('DOMContentLoaded', init);

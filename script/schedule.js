@@ -13,5 +13,4 @@ const init = function(){
     getTalks();
 };
 
-
 document.addEventListener('DOMContentLoaded', init);

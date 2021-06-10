@@ -17,5 +17,4 @@ const init = function(){
     getSprekers();    
 };
 
-
 document.addEventListener('DOMContentLoaded', init);
