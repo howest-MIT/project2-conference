@@ -15,7 +15,6 @@ let HaalIdOpUitQueryString = function () {
     console.log('De querystring ontbreekt');
   }
 };
-
 document.addEventListener('DOMContentLoaded', function () {
   console.info('DOM geladen');
   HaalIdOpUitQueryString();

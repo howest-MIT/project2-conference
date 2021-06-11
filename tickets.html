@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Home</title>
+  <title>Tickets</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -11,17 +11,10 @@
   <link rel="stylesheet" href="scss/screen.css"/>
   <script src="script/uitwerking.js"></script>
   <script src="script/dataHandler.js"></script>
-  <style>
-    /* Make the image fully responsive */
-    .carousel-inner img {
-      width: 100%;
-      height: 100%;
-    }
-    </style>
 </head>
 <body>
 
-    <nav class="c-navbar navbar-expand-md navbar-dark mb-3 pb-3">
+    <nav class="c-navbar navbar-expand-md navbar-dark mb-5 pb-3">
         <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
@@ -31,86 +24,132 @@
             <a href="index.html" class="navbar-brand">
                 <img src="img/logo.png" style="width: 75px;height: 35px;">
             </a>  
-            <li class="c-nav-item">
-              <a class="nav-link c-active"  href="index.html">Home</a>
+            <li class="nav-item">
+              <a class="nav-link "  href="index.html">Home</a>
             </li>
-            <li class="c-nav-item">
+            <li class="nav-item">
               <a class="nav-link" href="speakers.html">Speakers</a>
             </li>
-            <li class="c-nav-item">
+            <li class="nav-item">
               <a class="nav-link" href="schedule.html">Schedule</a>
             </li>
-            <li class="c-nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="sponsors.html">Sponsors</a>
               </li> 
-              <li class="c-nav-item">
-                <a class="nav-link" href="tickets.html">Tickets</a>
+              <li class="nav-item">
+                <a class="nav-link c-active" href="tickets.html">Tickets</a>
               </li>
-              <li class="c-nav-item">
+              <li class="nav-item">
                 <a class="nav-link" href="contact.html">Contact</a>
-              </li>    
+              </li>
               <li>
-              <form class="example" action="#" style="margin:auto;max-width:300px">
-                <input type="text" placeholder="Search.." name="search2">
-                
-              </form></li>  
+                <form class="example" action="#" style="margin:auto;max-width:300px">
+                  <input type="text" placeholder="Search.." name="search2">
+                  
+                </form></li>      
           </ul>
         </div>  
       </nav>
 
-      <div class="container mb-5">
-        <div class="row">
-            <div class="col-sm-2">
-    
-            </div>
-            <div class="col-sm-8 c-homecarousel ">
-                <div id="demo" class="carousel slide" data-ride="carousel">
-    
-                    
-                    <ul class="carousel-indicators">
-                      <li data-target="#demo" data-slide-to="0" class="active"></li>
-                      <li data-target="#demo" data-slide-to="1"></li>
-                      <li data-target="#demo" data-slide-to="2"></li>
-                    </ul>
-                    
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="img/image3.jpg" alt="speakers" width="900" height="300">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="img/image4.jpg" alt="speakers" width="900" height="300">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="img/image1.jpg" alt="speakers" width="900" height="300">
-                      </div>
-                    </div>
-                    
-                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                      <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#demo" data-slide="next">
-                      <span class="carousel-control-next-icon"></span>
-                    </a>
-                  </div>
-            </div>
-            <div class="col-sm-2">
-            </div>
-        </div>
-    </div>
+  
 <div class="container">
   <div class="row">
-    <div class="col-sm-4">
-      <img class="c-img rounded-circle" src="img/image1.jpg"/>
+    <div class="col-sm-2">
+      <h3>Ticket</h3>
+      <p class="mt-5">Early Birds</p><br>
+      <p class="mt-4">Regular</p><br>
+      <p class="mt-4">Student</p><br>
+      <p class="mt-4">V.I.P</p>
     </div>
-    <div class="col-sm-4">
-      <p class="c-hometext text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, maiores beatae pariatur at et quam explicabo deserunt necessitatibus cupiditate ea facere repellendus doloribus minus eaque animi quia hic nihil. Placeat!</p>
+    <div class="col-sm-2">
+      <h3>Amount</h3>
+      <br>
+      <form>
+        <div class="form-group mt-3">
+          <select class="form-control" id="sel1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+          </select>
+        </div>
+      </form>
+      <br>
+      <form>
+        <div class="form-group mt-2">
+          <select class="form-control" id="sel1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+          </select>
+        </div>
+      </form>
+      <form>
+        <div class="form-group mt-5">
+          <select class="form-control" id="sel1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+          </select>
+        </div>
+      </form>
+      <form>
+        <div class="form-group mt-5">
+          <select class="form-control" id="sel1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+          </select>
+        </div>
+      </form>
+      <a href="index.html"><button type="button" class="btn c-btn">Order</button></a>
     </div>
-    <div class="col-sm-4">       
-        <img class="c-img rounded-circle" src="img/image2.jpg"/>
+    <div class="col-sm-5 c-ticket">
+      <p class="c-tickettitle" >Early Bird</p>
+      <p class="c-ticketamount" >Amount: </p>
+      <p class="c-tickettext" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil eveniet quod officiis accusantium? Eum architecto itaque, laudantium facere soluta expedita veritatis eligendi libero corporis saepe dolorum nulla, ea rem impedit! </p>
+      <button type="button" class="btn c-btn--ticket">Reserve</button><br>
+      <a href="edit.html"><button type="button" class="btn c-btn--ticket">Edit</button></a>
+    </div>
+    <div class="col-sm-3">
     </div>
   </div>
 </div>
-
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <p></p>
+      <p></p>
+    </div>
+    <div class="col-sm-4">
+      <p></p>
+      <p></p>
+    </div>
+    <div class="col-sm-4">
+      <p></p>
+      <p></p>
+    </div>
+  </div>
+</div>
 <div class="c-footer">
     <div class="container mt-5">
         <div class="row">
@@ -128,6 +167,6 @@
             
         </div>
     </div>
-</div>
+</div>  
 </body>
 </html>
