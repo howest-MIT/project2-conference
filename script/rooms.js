@@ -4,7 +4,7 @@ const toonZalen = function(data){
     console.log("zalen:");
     console.log(data);
     for(const item of data){
-        console.log(item);
+        console.log(`${item.id.omschrijving}`);
     }
 };
 

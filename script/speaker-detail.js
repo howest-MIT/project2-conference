@@ -18,5 +18,4 @@ let HaalIdOpUitQueryString = function () {
 document.addEventListener('DOMContentLoaded', function () {
   console.info('DOM geladen');
   HaalIdOpUitQueryString();
-
 });

@@ -4,7 +4,7 @@ const toonSprekers = function(data){
     console.log("Sprekers:");
     console.log(data);
     for (const item of data){
-           console.log(item);
+        console.log(`${item.data.id.voornaam}`);
     }
 };
 

@@ -36,14 +36,11 @@ body {
     clear: both;
     display: table;
   }
-  .c-link{
+  .c-link .c-link:hover{
     text-decoration: none;
     color: white;
   }
-  .c-link:hover{
-    text-decoration: underline;
-    color: white;
-  }
+ 
   .c-active {
     color: white;
     text-decoration: underline;
@@ -56,16 +53,25 @@ body {
     padding: 1px 1px;
     margin-left: 35px;
     background-color: black;
-  }
-  .c-imgspeakers {
+    &__speakers{
     width: 175px;
     height: 150px;
     background-color: black;
-    margin-left: 35px;
+    margin-left: 35px;  
+    }
   }
+  
   .c-sponsors {
     width: 160px;
     height: 150px;
+    &__gold{
+    border: 5px solid gold;
+    padding: 1px;
+    }
+    &__friends{
+    border: 5px solid #a12027;
+    padding: 1px;
+    }
   }
   .c-navbar {
     background-color: #a12027;
@@ -76,16 +82,17 @@ body {
     font-size: 16px;
     align-items: center;
   }
-  .c-scheduletext {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-style: normal;
-    font-size: 16px;
-    align-items: center;
-  }
+
   .c-schedule {
     background-color: black;
     color: white;
     opacity: 50%;
+    &__text{
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    align-items: center;
+    }
   }
   .c-homecarousel {
     justify-content: center;
@@ -95,11 +102,13 @@ body {
     justify-content: center;
     background-color: #a12027;
     width: auto;
-  }
-  .c-footertext {
+
+    &__text{
     color: white;
     padding: 20px;
+    }
   }
+
   .c-fab {
     color: black;
     height: 4px;
@@ -108,6 +117,10 @@ body {
   .c-speakertext {
     color: black;
     margin-left: 5px;
+
+    &__heart{
+      color: #a12027;
+    }
   }
   
   .c-card {
@@ -116,30 +129,28 @@ body {
     width: 245px;
     margin-top: 5px;
     padding-top: 5px;
-  }
-  
-  .c-card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+
+    &:hover{
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
   }
   .c-titel {
     text-align: center;
     margin-bottom: 35px;
   }
-  .c-gold {
-    border: 5px solid gold;
-    padding: 1px;
-  }
-  .c-friends {
-    border: 5px solid #a12027;
-    padding: 1px;
-  }
-  .c-speakerheart{
-    color: #a12027;
-  }
+  
   .c-btn{
     background-color: #a12027;
     width: 160px;
     color: white;
+    &__ticket{
+    background-color: #a12027;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    margin: 5px 190px;
+    width: 80px;
+    }
   }
   
   .c-ticket{
@@ -147,35 +158,27 @@ body {
     color: white;
     height: 365px;
     margin: 65px 35px;
-  }
-  .c-tickettitle{
+    &__title{
     text-align: center;
     margin-top: 15px;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-style: normal;
     font-size: 22px;
-  }
-  .c-ticketamount{
+    }
+    &__amount{
     text-align: center;
     margin-top: 10px;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-style: normal;
     font-size: 20px;
-  }
-  .c-tickettext{
-    text-align: center;
+    }
+    &__text{
+     -text-align: center;
     margin-top: 10px;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-style: normal;
-    font-size: 16px;
-  }
-  .c-btn--ticket{
-    background-color: #a12027;
-    color: white;
-    text-align: center;
-    justify-content: center;
-    margin: 5px 190px;
-    width: 80px;
+    font-size: 16px; 
+    }
   }
   .c-detailtitle{
     text-align: center;
@@ -194,12 +197,12 @@ body {
   }
   .c-detailtext{
     text-align: left;
-  
-  }
-  .c-detailtext2{
+    &__2{
     text-align: center;
+ 
+    }
   }
-  
+ 
   .c-detailsession{
     text-align: center;
   }
