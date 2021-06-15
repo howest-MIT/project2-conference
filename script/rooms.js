@@ -9,7 +9,7 @@ const toonZalen = function(data){
 };
 
 const getZalen = function(){
-    handleData(`http://api.laprudence.be/project2/v2/zalen`,toonZalen);
+    handleData(`https://api.laprudence.be/project2/v2/zalen`,toonZalen);
 };
 
 const init = function(){

@@ -5,7 +5,7 @@ const toonLanden = function(){
 };
 
 const getLanden = function(){
-    handleData(`http://api.laprudence.be/project2/v2/landen`, toonLanden);
+    handleData(`https://api.laprudence.be/project2/v2/landen`, toonLanden);
 };
 
 const init = function(){

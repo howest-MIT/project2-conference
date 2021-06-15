@@ -1,5 +1,7 @@
 <?php
     //geef de mogelijkheid om een ticket (bestelling aan te passen)
+    require_once dirname(__FILE__) . "/../src/helper/debug.php";
+    require_once dirname(__FILE__) . "/../src/repository/ticketsrepository.php";
 ?>
 
 <!DOCTYPE html>
