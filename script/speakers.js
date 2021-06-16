@@ -3,7 +3,7 @@
 
 
 const getSprekers = function(){
-    handleData(`https://api.laprudence.be/project2/v2/sprekers?all`,toonSprekers, null);
+    handleData(`https://api.laprudence.be/project2/v2/sprekers?all`,toonSprekers, "GET");
 };
 
 const toonSprekers =function(speakersData){
@@ -21,7 +21,7 @@ for (let speaker of arrSpeakers){
   const ukimg = "unknown_person.jpg";
   let img = ";";
   const likes = speaker.love_teller;
-const country = speaker.land.benaming.eng;
+  const country = speaker.land.benaming.eng;
 
   console.log(givimg);
   if (givimg && givimg != null){
@@ -42,7 +42,7 @@ const country = speaker.land.benaming.eng;
 
 <div class="col-sm-4 c-speakers js-sprekers">
     <div class="c-card ">
-        <a href="speakersdetail.html"><img src="${img}" alt="Avatar"  class="c-imgspeakers"></a>
+        <a href="speakersdetail.html"><img src="img/${img}" alt="Avatar"  class="c-imgspeakers"></a>
         <div class="c-container"><br>
           <p><i class="far fa-heart"></i>Aantal likes </p>
           <h4 class="c-speakertext"><b>${fnaam} ${lnaam}</b></h4> 
@@ -64,7 +64,6 @@ let heart = document.querySelectorAll(".info__heart");
 
 const init = function(){
     console.log("init");
-    
     getSprekers();
     
 };

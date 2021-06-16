@@ -3,6 +3,7 @@
     require_once dirname(__FILE__) . "/../src/helper/debug.php";
     require_once dirname(__FILE__) . "/../src/repository/ticketsrepository.php";
     $arrTickets = ticketsrepository::getAlleTickets();
+    //print_r_pre($arrTickets);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,22 +32,22 @@
                 <img src="../img/logo.png" style="width: 75px;height: 35px;">
             </a>  
             <li class="nav-item">
-              <a class="nav-link "  href="index.html">Home</a>
+              <a class="nav-link "  href="../index.html">Home</a>
             </li>
             <li class="nav-item">   
-              <a class="nav-link" href="speakers.html">Speakers</a>
+              <a class="nav-link" href="../speakers.html">Speakers</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="schedule.html">Schedule</a>
+              <a class="nav-link" href="../schedule.html">Schedule</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="sponsors.html">Sponsors</a>
+                <a class="nav-link" href="../sponsors.html">Sponsors</a>
               </li> 
               <li class="nav-item">
                 <a class="nav-link c-active" href="tickets.html">Tickets</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link" href="../contact.html">Contact</a>
               </li>
               <li>
                 <form class="example" action="#" style="margin:auto;max-width:300px">
@@ -62,24 +63,30 @@
         <table class="table table-striped">
             <thead>
             <tr>
-            
-                <th>Ticket Type</th>
-				<th>Amount</th>
+                <th>Ticket Id</th>
+                <th>Naam</th>
+				        <th>FamillieNaam</th>
+                <th>Email</th>
+                <th>Postcode</th>
+                <th>Besteld op</th>
+
             </tr>
             </thead>
             <tbody>
 <?php
 foreach($arrTickets as $ticket) {
     echo"<tr>";
-    echo"<td>".$afspraak->omschrijving."</td>";
-    echo"<td>".$afspraak->getTypeAfspraak()."</td>";
-    echo"<td>".$afspraak->datum."</td>";
+    echo "<td>".$ticket->ticketid."</td>";
+    echo"<td>".$ticket->naam."</td>";
+    echo"<td>".$ticket->voornaam."</td>";
+    echo"<td>".$ticket->email."</td>";
     //echo"<td>".$afspraak->contactid."</td>";
-    echo"<td>".$afspraak->naam."</td>";
+    echo"<td>".$ticket->postcode."</td>";
+    echo"<td>".$ticket->besteldop."</td>";
+
 
     
-    echo "<td><a href='delete-afspraak-verwerk.php?id=".$tempid."'>delete</a>  - <a href='update-afspraak.php?id=".$tempid."'>edit</a> </td>";
-    echo "</tr>";
+    
 }?>
             </tbody>
         </table>

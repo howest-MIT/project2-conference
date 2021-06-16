@@ -9,14 +9,14 @@ const calcTime = function (time) {
       hour = parseInt(pieces[0], 10);
       minute = parseInt(pieces[1], 10);
   }
-  let parsedTime = `${hour + 1}:${minute}`;
+  let passedTime = `${hour + 1}:${minute}`;
   
   if(minute == 0){
-    parsedTime = `${hour + 1}:${minute}0`;
+    passedTime = `${hour + 1}:${minute}0`;
   }
   
 
-  return parsedTime
+  return passedTime
 }
 
 const showTalks = function (jsonData) {
@@ -41,9 +41,9 @@ const showRooms = function (jsonData) {
   console.log("showRooms");
   console.log(jsonData);
     for (const room of jsonData) {
-        document.querySelector(".js-rooms").innerHTML += `<div class="c-schedule">
-        <div class="row">
-         <p class="room w-100 js-room">${room.omschrijving}</p>
+        document.querySelector(".js-rooms").innerHTML += `<div class="row">
+        <div class="c-schedule js-schedule">
+         <p class=" c-scheduletext room w-100 js-room">${room.omschrijving}</p>
        </div>
       <div class="js-session-${room.id}"></div> </div>
       `;

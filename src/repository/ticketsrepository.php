@@ -6,28 +6,28 @@ require_once dirname(__FILE__) . "/../model/ticket.php";
 class TicketsRepository
 {
     public static function getAlleTickets(){
-        $arr = Database::getRows("SELECT * FROM tickets");
+        $arr = Database::getRows("SELECT * FROM tickets",null,"Ticket");
         return $arr;
     }
    
     public static function getTicketById($particketid){
-        $item = Database::getSingleRow("SELECT ticketid, naam, voornaam, postcode, email, earlybird, regular, student, vip, besteldop FROM `tickets` WHERE id=? order by ticketid", [$particketid], "Tickets");
+        $item = Database::getSingleRow("SELECT ticketid, naam, voornaam, postcode, email, earlybird, regular, student, vip, besteldop FROM tickets WHERE id=? order by ticketid", [$particketid], "Ticket");
         return $item;
     }
     public static function getEarlybird($parearlybird){
-        $item = Database::getSinglerow("SELECT SUM(earlybird) FROM tickets",null, "earlybird");
+        $item = Database::getRow("SELECT COUNT(earlybird) FROM tickets");
         return $item;
     }
     public static function getRegular($parregular){
-        $item = Database::getSinglerow("SELECT SUM(regular) FROM tickets",null, "regular");
+        $item = Database::getRow("SELECT COUNT(regular) FROM tickets");
         return $item;
     }
     public static function getStudent($parstudent){
-        $item = Database::getSinglerow("SELECT SUM(student) FROM tickets",null, "student");
+        $item = Database::getRow("SELECT COUNT(student) FROM tickets");
         return $item;
     }
     public static function getVip($parvip){
-        $item = Database::getSinglerow("SELECT SUM(vip) FROM tickets",null, "vip");
+        $item = Database::getRow("SELECT COUNT(vip) FROM tickets");
         return $item;
     }
     public static function createTicket($parnaam, $parvoornaam, $paremail, $parpostcode, $parearlybird, $parstudent, $parvip, $parregular){
