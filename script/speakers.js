@@ -40,13 +40,13 @@ for (let speaker of arrSpeakers){
     document.querySelector(".js-sprekers").innerHTML += 
 `
 
-<div class="col-sm-4 c-speakers js-sprekers">
+<div class="col-sm-4 c-speakers">
     <div class="c-card ">
         <a href="speakersdetail.html"><img src="img/${img}" alt="Avatar"  class="c-imgspeakers"></a>
         <div class="c-container"><br>
-          <p><i class="far fa-heart"></i>Aantal likes </p>
-          <h4 class="c-speakertext"><b>${fnaam} ${lnaam}</b></h4> 
-          <div class="c-moreinfo"><a href="speaker-detail.html?speakerid=${id}" target="_blank" class="btn">More info</a></div>
+        <p class="c-speakers__likes"><i class="far fa-heart c-info__heart"></i>${likes} </p>
+          <h5 class="c-speaker__text"><b>${fnaam} ${lnaam}</b></h5> 
+          <div class="c-moreinfo"><a href="speaker-detail.html" target="_blank" class="btn">${speaker.bio.eng.slice(0,160)}</a></div>
         </div>
       </div>
     </div>`

@@ -30,7 +30,7 @@ const showTalks = function (jsonData) {
      <p class="uur">${talk.start}h - ${end}</p>
    </td>
    <td>
-   <div class="col-sm-6 c-schedule js-schedule">
+   <div class="col-sm-6 c-schedule">
       <a href="roomdetail.html" class="c-link"><h3>${talk.titel}</h3></a>
       <p class="c-scheduletext">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
     </div>`;
@@ -41,11 +41,11 @@ const showRooms = function (jsonData) {
   console.log("showRooms");
   console.log(jsonData);
     for (const room of jsonData) {
-        document.querySelector(".js-rooms").innerHTML += `<div class="row">
-        <div class="c-schedule js-schedule">
+        document.querySelector(".js-schedule").innerHTML += `<div class="row">
+        <div class="c-schedule">
          <p class=" c-scheduletext room w-100 js-room">${room.omschrijving}</p>
        </div>
-      <div class="js-session-${room.id}"></div> </div>
+      <div class="js-room-${room.id}"></div> </div>
       `;
 
       handleData(`https://api.laprudence.be/project2/v2/zalen/${room.id}/talks`, showTalks);

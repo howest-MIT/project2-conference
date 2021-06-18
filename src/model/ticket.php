@@ -23,5 +23,24 @@ class Ticket{
         $this->vip = $parvip;
         $this->besteldop = $parbesteldop;
     }
+
+    public function getTypeTicket(){
+        switch ($this->typeticket){
+            case 1:
+                return "Earlybird";
+                break;
+            case 2:
+                return "Student";
+                break;
+            case 3:
+                return "Regular";
+                break;
+            case 4:
+                return "VIP";
+                break;
+            default:
+                return "onbekend";
+        }
+    }
 }
 ?>
