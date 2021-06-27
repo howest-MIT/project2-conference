@@ -1,7 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require_once dirname(__FILE__) . "/src/helper/debug.php"; 
+require_once dirname(__FILE__) . "/src/repository/ticketsrepository.php"; 
+
+
+if(isset($_GET["ticketid"])==true){
+    $res = TicketsRepository::deleteTicket($_GET["ticketid"]);
+    if ($res >0){
+        header("location:index.php");
+    }else{
+        echo "verwijderen mislukt";
+    }
+  
+}else{
+    echo "";
+}
+
+?>
 <head>
-  <title>Home</title>
+  <title>Delete</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -11,13 +27,6 @@
   <link rel="stylesheet" href="scss/screen.css"/>
   <script src="script/uitwerking.js"></script>
   <script src="script/dataHandler.js"></script>
-  <style>
-    /* Make the image fully responsive */
-    .carousel-inner img {
-      width: 100%;
-      height: 100%;
-    }
-    </style>
 </head>
 <body>
 
@@ -33,7 +42,7 @@
                 <img src="img/logo.png" style="width: 90px;height: 40px;">
             </a>  
             <li class="c-nav-item">
-              <a class="nav-link c-active"  href="index.html">Home</a>
+              <a class="nav-link"  href="index.html">Home</a>
             </li>
             <li class="c-nav-item">
               <a class="nav-link" href="speakers.html">Speakers</a>
@@ -58,59 +67,46 @@
           </ul>
         </div>  
       </nav>
+<body>
+    
 
-      <div class="container mb-5">
-        <div class="row">
-            <div class="col-sm-2">
-    
-            </div>
-            <div class="col-sm-8 c-homecarousel ">
-                <div id="demo" class="carousel slide" data-ride="carousel">
-    
-                    
-                    <ul class="carousel-indicators">
-                      <li data-target="#demo" data-slide-to="0" class="active"></li>
-                      <li data-target="#demo" data-slide-to="1"></li>
-                      <li data-target="#demo" data-slide-to="2"></li>
-                    </ul>
-                    
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="img/image3.jpg" alt="speakers" width="900" height="300">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="img/image4.jpg" alt="speakers" width="900" height="300">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="img/image1.jpg" alt="speakers" width="900" height="300">
-                      </div>
-                    </div>
-                    
-                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                      <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#demo" data-slide="next">
-                      <span class="carousel-control-next-icon"></span>
-                    </a>
-                  </div>
-            </div>
-            <div class="col-sm-2">
+<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Confirm Delete</h4>
+                </div>
+            
+                <div class="modal-body">
+                    <p>You are about to delete one track, this procedure is irreversible.</p>
+                    <p>Do you want to proceed?</p>
+                    <p class="debug-url"></p>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-danger btn-ok">Delete</a>
+                </div>
             </div>
         </div>
     </div>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-2 col-md-4 col-lg-4">
-      <img class="c-img rounded-circle" src="img/image1.jpg"/>
-    </div>
-    <div class="col-sm-2 col-md-4 col-lg-4">
-      <p class="c-hometext text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, maiores beatae pariatur at et quam explicabo deserunt necessitatibus cupiditate ea facere repellendus doloribus minus eaque animi quia hic nihil. Placeat!</p>
-    </div>
-    <div class="col-sm-2 col-md-4 col-lg-4">       
-        <img class="c-img rounded-circle" src="img/image2.jpg"/>
-    </div>
-  </div>
-</div>
+
+    <a href="#" data-href="/delete.php?id=23" data-toggle="modal" data-target="#confirm-delete">Delete record</a><br>
+    
+    <button class="btn btn-default" data-href="/delete.php?id=54" data-toggle="modal" data-target="#confirm-delete">
+        Delete record
+    </button>
+</body>
+    <script>
+        $('#confirm-delete').on('show.bs.modal', function(e) {
+            $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+            
+            $('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
+        });
+    </script>
+
 
 <div class="c-footer">
     <div class="container mt-5">
@@ -126,5 +122,3 @@
         </div>
     </div>
 </div>
-</body>
-</html>
